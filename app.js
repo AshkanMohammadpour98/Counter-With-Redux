@@ -1,3 +1,5 @@
+
+
 const incresBtn = document.getElementById('increse-button');
 const decresBtn = document.getElementById('decrese-button');
 const resetBtn = document.getElementById('reset-button');
@@ -17,3 +19,6 @@ resetBtn.addEventListener('click' , (e)=>{
     counter = 0;
     result.innerHTML = counter;
 })
+
+
+console.log(Redux);
