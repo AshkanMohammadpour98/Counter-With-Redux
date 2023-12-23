@@ -1,4 +1,5 @@
 import { incActionCreator , decActionCreator , resetActionCreator } from "./Redux/actionCreators.js";
+import { incrementAction , decrementAction , resetAction } from "./Redux/actionTypes.js";
 
 const incresBtn = document.getElementById('increse-button');
 const decresBtn = document.getElementById('decrese-button');
@@ -6,30 +7,15 @@ const resetBtn = document.getElementById('reset-button');
 const result = document.querySelector('.result');
 
 //reduser
-// const counterReducer = (state = 0 , action)=>{
-//     if (action.type === 'INCREMENT') {
-//         return state + 1;
-//     }
-//     else if (action.type === 'DECREMENT'){
-//         return state - 1;
-//     }
-//     else if (action.type === 'RESET'){
-//         return state = 0;
-//     }
-//     else {
-//         return state
-//     }
-// }
-
 const counterReducer = (state = 0 , action) =>{
     switch (action.type) {
-        case "INCREMENT": {
+        case incrementAction: {
             return state +1
         }
-        case "DECREMENT" : {
+        case decrementAction : {
             return state -1
         }
-        case "RESET" : {
+        case resetAction : {
             return state = 0
         }
             break;
@@ -44,10 +30,6 @@ const counterReducer = (state = 0 , action) =>{
 //create store
 const store = Redux.createStore(counterReducer)
 
-//actions
-// const incrementAction = { type : "INCREMENT"}
-// const decrementAction = { type : "DECREMENT"}
-// const resetAction = { type : "RESET"}
 
 
 incresBtn.addEventListener('click' , ()=>{

@@ -1,9 +1,11 @@
+import { incrementAction , decrementAction , resetAction } from "./actionTypes.js";
+
 export const incActionCreator = ()=>{
-    return { type : "INCREMENT"}
+    return { type : incrementAction}
 }
 export const decActionCreator = ()=>{
-    return { type : "DECREMENT"}
+    return { type : decrementAction}
 }
 export const resetActionCreator = ()=>{
-    return { type : "RESET"}
+    return { type : resetAction}
 }
