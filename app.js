@@ -1,4 +1,4 @@
-
+import { incActionCreator , decActionCreator , resetActionCreator } from "./Redux/actionCreators.js";
 
 const incresBtn = document.getElementById('increse-button');
 const decresBtn = document.getElementById('decrese-button');
@@ -45,19 +45,19 @@ const counterReducer = (state = 0 , action) =>{
 const store = Redux.createStore(counterReducer)
 
 //actions
-const incrementAction = { type : "INCREMENT"}
-const decrementAction = { type : "DECREMENT"}
-const resetAction = { type : "RESET"}
+// const incrementAction = { type : "INCREMENT"}
+// const decrementAction = { type : "DECREMENT"}
+// const resetAction = { type : "RESET"}
 
 
 incresBtn.addEventListener('click' , ()=>{
-    console.log(store.getState());
+    store.dispatch(incActionCreator())
 })
 decresBtn.addEventListener('click' , ()=>{
-    store.dispatch(decrementAction);
+    store.dispatch(decActionCreator());
 })
 resetBtn.addEventListener('click' , ()=>{
-    store.dispatch(resetAction);
+    store.dispatch(resetActionCreator());
 })
 
 const renderUI = ()=>{
