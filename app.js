@@ -51,14 +51,18 @@ const resetAction = { type : "RESET"}
 
 
 incresBtn.addEventListener('click' , ()=>{
-    store.dispatch(incrementAction);
     console.log(store.getState());
 })
 decresBtn.addEventListener('click' , ()=>{
     store.dispatch(decrementAction);
-    console.log(store.getState());
 })
 resetBtn.addEventListener('click' , ()=>{
-    store.dispatch(resetAction)
-    console.log(store.getState());
+    store.dispatch(resetAction);
 })
+
+const renderUI = ()=>{
+    result.innerHTML = store.getState()
+}
+renderUI();
+
+store.subscribe(renderUI);
